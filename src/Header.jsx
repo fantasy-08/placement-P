@@ -6,7 +6,9 @@ import Select from '@material-ui/core/Select';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
-
+import IconButton from '@material-ui/core/IconButton';
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+import AddRoundedIcon from '@material-ui/icons/AddRounded';
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
@@ -17,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Header({change}) {
+export default function Header({change,hall_of_fame}) {
   const classes = useStyles();
   const [state, setState] = React.useState({
     age: '',
@@ -33,6 +35,9 @@ export default function Header({change}) {
       change("Increasing", !state_button.checkedA);
   };
 
+    const HandleChange = () => {
+        change("HOF",false);
+    }
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -44,7 +49,7 @@ export default function Header({change}) {
   };
 
   return (
-    <div className="text-center">
+      <div className="text-center">
       <FormControl variant="outlined" className={classes.formControl}>
         <InputLabel htmlFor="outlined-age-native-simple">Year</InputLabel>
         <Select
@@ -71,7 +76,14 @@ export default function Header({change}) {
                 label="Sort Increasingly"
             />
         </div>
-        
+              
+              <IconButton aria-label="delete" className={classes.margin} size="small" onClick={HandleChange}>
+                  {
+                    hall_of_fame ?
+                    <ArrowDownwardIcon fontSize="inherit" /> :
+                    <AddRoundedIcon fontSize="inherit" />                        
+                  }
+        </IconButton>
       </FormGroup>
     </div>
   );

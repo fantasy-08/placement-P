@@ -8,17 +8,30 @@ function App() {
   const [info, setInfo] = useState([]);
   const [condition, setCondition] = useState({
     year: "0",
-    Increasing: false
-  })
+    Increasing: false,
+    HOF: false
+  });
 
-  function SetCondition(name,val){
-    setCondition((prevData) => {
-      return {
-        ...prevData,
-        [name] : val
-      }
-    });
-    
+  function SetCondition(name, val) {
+    if (name === "HOF")
+    {
+      setCondition((prevData) => {
+        var V = prevData.HOF ? false : true;
+        return {
+          ...prevData,
+          [name] : V
+        }
+      })
+    }
+    else
+    {
+      setCondition((prevData) => {
+        return {
+          ...prevData,
+          [name] : val
+        }
+      });
+    }
     if (name==="Increasing" && val===true)
     {
       setInfo((prevInfo) => {
@@ -56,7 +69,6 @@ function App() {
         { method: "POST" }
       );
       const data = await res.json();
-      // console.log(data.placements);
       setInfo(data.placements);
       return data;
     }
@@ -65,10 +77,13 @@ function App() {
 
   return (
     <div>
-      <h1 style={{textAlign:"center"}}>E-Placement Portal</h1> 
-      <Header className="container" change={SetCondition} />
-    
-      <Frame info={info}/>
+      <h1 style={{textAlign:"center",fontFamily:'Dancing Script'}}>E-Placement Portal</h1> 
+      <Header className="container" change={SetCondition} hall_of_fame={condition.HOF}/>
+      {
+        condition.HOF ?
+          <Frame info={info}/> :
+          <div></div>
+      }      
       <br />
       <hr />
       <br />
