@@ -1,6 +1,7 @@
 import React,{ useEffect, useState} from 'react'
 import Header from './Header'
 import Student from './Student';
+import Frame from './Frame';
 
 function App() {
 
@@ -18,7 +19,7 @@ function App() {
       }
     });
     
-    if (condition.Increasing)
+    if (name==="Increasing" && val===true)
     {
       setInfo((prevInfo) => {
         var NewInfo = prevInfo;
@@ -34,6 +35,7 @@ function App() {
           return AP - BP;
         })
         NewInfo.reverse();
+        console.log("HERE");
         return NewInfo;
       })  
     }
@@ -54,7 +56,7 @@ function App() {
         { method: "POST" }
       );
       const data = await res.json();
-      console.log(data.placements);
+      // console.log(data.placements);
       setInfo(data.placements);
       return data;
     }
@@ -65,6 +67,11 @@ function App() {
     <div>
       <h1 style={{textAlign:"center"}}>E-Placement Portal</h1> 
       <Header className="container" change={SetCondition} />
+    
+      <Frame info={info}/>
+      <br />
+      <hr />
+      <br />
       <div className="row">
       {
         (function ()

@@ -44,7 +44,7 @@ export default function Header({change}) {
   };
 
   return (
-    <div>
+    <div className="text-center">
       <FormControl variant="outlined" className={classes.formControl}>
         <InputLabel htmlFor="outlined-age-native-simple">Year</InputLabel>
         <Select
@@ -65,7 +65,7 @@ export default function Header({change}) {
         </Select>
           </FormControl>
           <FormGroup row>
-        <div style={{marginLeft:"50em"}}>
+        <div className="ml-auto">
             <FormControlLabel 
                 control={<Switch checked={state_button.checkedA} onChange={handleChange_button} name="checkedA" />}
                 label="Sort Increasingly"
