@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/fantasy-08/placement-P/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/fantasy-08/placement-P/static/js/main.3a6be6cb.chunk.js",
+    "main.js.map": "/fantasy-08/placement-P/static/js/main.3a6be6cb.chunk.js.map",
+    "runtime-main.js": "/fantasy-08/placement-P/static/js/runtime-main.35075e2d.js",
+    "runtime-main.js.map": "/fantasy-08/placement-P/static/js/runtime-main.35075e2d.js.map",
+    "static/js/2.3294dd50.chunk.js": "/fantasy-08/placement-P/static/js/2.3294dd50.chunk.js",
+    "static/js/2.3294dd50.chunk.js.map": "/fantasy-08/placement-P/static/js/2.3294dd50.chunk.js.map",
+    "static/js/3.7618c894.chunk.js": "/fantasy-08/placement-P/static/js/3.7618c894.chunk.js",
+    "static/js/3.7618c894.chunk.js.map": "/fantasy-08/placement-P/static/js/3.7618c894.chunk.js.map",
+    "index.html": "/fantasy-08/placement-P/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/fantasy-08/placement-P/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.3294dd50.chunk.js.LICENSE.txt": "/fantasy-08/placement-P/static/js/2.3294dd50.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.35075e2d.js",
+    "static/js/2.3294dd50.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.3a6be6cb.chunk.js"
+  ]
+}
