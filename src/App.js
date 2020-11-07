@@ -9,7 +9,7 @@ function App() {
   const [condition, setCondition] = useState({
     year: "0",
     Increasing: false,
-    HOF: false
+    HOF: true
   });
 
   function SetCondition(name, val) {
@@ -115,7 +115,7 @@ function App() {
                         profile={profile}
                         Package={Package}
                         department={department} 
-                    date={date}
+                        date={date}
                   />
                 </div>
               )

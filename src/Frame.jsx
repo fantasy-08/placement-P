@@ -1,7 +1,7 @@
 import React from 'react'
 
 function Frame({info}) {
-    const URL = "https://kchanews.com/wp-content/uploads/2020/09/38023505_2039329179487401_5212516848960012288_o-780x470.jpg";
+    const URL = "https://images.unsplash.com/photo-1578269174936-2709b6aeb913?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1110&&h=470&q=80";
     
     return (
     <div className="container">

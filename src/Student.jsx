@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -40,14 +40,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Student({name,branch,company,profile,Package,date}) {
-  const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
+    const classes = useStyles();
+    const [expanded, setExpanded] = React.useState(false);
+    const [URL, setURL] = React.useState();
+    const [isClick, setClick] = useState(false);
+    const handleExpandClick = () => {
+        setExpanded(!expanded);
+    };
+//   const URL = `https://logo.clearbit.com/${company.replace(/ /g, '')}.com?size=800}`;
+    // const URL = "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80";
+    // var URL = 'https://source.unsplash.com/random/';
+    useEffect(() => {
+        async function fetchUrl() {
+            const temp = await fetch("https://source.unsplash.com/1600x900/?coding,developer");
+            setURL(temp.url);
+        } fetchUrl()
+    }, []);
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
-  const URL = `https://logo.clearbit.com/${company.replace(/ /g, '')}.com?size=800}`;
-    
   return (
     <Card className={classes.root}>
       <CardHeader
@@ -75,12 +84,18 @@ export default function Student({name,branch,company,profile,Package,date}) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
+        <IconButton aria-label="add to favorites" >
+            {/* <Heart isClick={isClick} onClick={() => setClick(!isClick)} /> */}
         </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
+              <div class="fb-share-button"
+                  data-href="https://developers.facebook.com/docs/plugins/"
+                  data-layout="button_count" data-size="large">
+                  <a target="_blank"
+                      href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
+                      class="fb-xfbml-parse-ignore">
+                      <ShareIcon />
+                  </a>
+              </div>
         <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,
