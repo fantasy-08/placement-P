@@ -11,11 +11,12 @@ import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
-import FavoriteIcon from '@material-ui/icons/Favorite';
+// import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-
+import { SpriteAnimator } from 'react-sprite-animator';
+import heart from './heart.svg'  
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
@@ -43,7 +44,11 @@ export default function Student({name,branch,company,profile,Package,date}) {
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
     const [URL, setURL] = React.useState();
-    const [isClick, setClick] = useState(false);
+    const [isLiked, setIsLiked] = useState(false)
+
+    const onClick = () => {
+      setIsLiked(!isLiked)
+    }
     const handleExpandClick = () => {
         setExpanded(!expanded);
     };
@@ -85,7 +90,18 @@ export default function Student({name,branch,company,profile,Package,date}) {
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites" >
-            {/* <Heart isClick={isClick} onClick={() => setClick(!isClick)} /> */}
+        <div onClick={onClick}>
+      <SpriteAnimator
+        width={36}
+        height={36}
+        sprite={heart}
+        shouldAnimate={isLiked}
+        fps={60}
+        startFrame={0}
+        stopLastFrame={true}
+        reset={!isLiked}
+      />
+    </div>
         </IconButton>
               <div class="fb-share-button"
                   data-href="https://developers.facebook.com/docs/plugins/"
@@ -126,7 +142,6 @@ export default function Student({name,branch,company,profile,Package,date}) {
                 <div>
                     <h6>Job Profile</h6>{profile}    
                 </div>
-                      
           </Typography>
           
         </CardContent>
