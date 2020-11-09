@@ -5,15 +5,16 @@ function Pie({ Placement, total_student_placement })
 {
     function init()
     {
-        const temp = [];
+        var temp = [];
         Object.keys(Placement).map((key) => {
-            temp[key] = (parseFloat(Placement[key].total) / parseFloat(total_student_placement)).toFixed(2)*100;
+            temp = [[key,(parseFloat(Placement[key].total) / parseFloat(total_student_placement)).toFixed(2)*100]].concat(temp);
         });
         
         return temp;
     }
     var temp = init();
     temp = ['Branch', 'Placed'].concat(temp);
+    console.log(temp);
     return (
         <div>
             Pie Chart goes here! 
