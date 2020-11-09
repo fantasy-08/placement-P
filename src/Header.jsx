@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Header({change,hall_of_fame}) {
   const classes = useStyles();
   const [state, setState] = React.useState({
-    age: '',
+    year: '',
     name: 'hai',
   });
   const [state_button, setState_button] = React.useState({
@@ -58,8 +58,8 @@ export default function Header({change,hall_of_fame}) {
           onChange={handleChange}
           label="Year"
           inputProps={{
-            name: 'age',
-            id: 'outlined-age-native-simple',
+            name: 'year',
+            id: 'outline  d-age-native-simple',
           }}
         >
           <option aria-label="None" value="" />
