@@ -1,3 +1,9 @@
+
+# Cheak out the live projected hosted using Github Pages <B
+
+[E-Placement Portal](https://fantasy-08.github.io/placement-P).
+
+
 # Cheak out the live updates of MNIT JAIPUR placement session !!!
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -23,7 +29,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-# Cheak out the live projected hosted using Github Pages <B
-
-[E-Placement Portal](https://fantasy-08.github.io/placement-P).
