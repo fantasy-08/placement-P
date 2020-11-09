@@ -2862,13 +2862,13 @@ function App() {
   };
 
   useEffect(() => {
-    function fetchData() {
-      // const res = await fetch(
-      //   "https://cors-anywhere.herokuapp.com/http://placements.mnit.ac.in/api/placements/getAll",
-      //   { method: "POST" }
-      // );
-      // const data = await res.json();
-      const data = server_data;
+    async function fetchData() {
+      const res = await fetch(
+        "https://cors-anywhere.herokuapp.com/http://placements.mnit.ac.in/api/placements/getAll",
+        { method: "POST" }
+      );
+      const data = await res.json();
+      // const data = server_data;
       setInfo(data.placements);
       return data;
     }

@@ -13,11 +13,11 @@ function Pie({ Placement, total_student_placement })
         return temp;
     }
     var temp = init();
-    temp = ['Branch', 'Placed'].concat(temp);
-    console.log(temp);
+    temp = [['Branch', 'Placed'], ...temp];
+
     return (
         <div>
-            Pie Chart goes here! 
+            <h6>Pie Tell It All!</h6>
             <Chart
             width={'1000px'}
             height={'500px'}

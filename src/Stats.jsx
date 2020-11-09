@@ -62,7 +62,7 @@ function Stats({ info }) {
             }
             {
                 state.gilad ?
-                <Pie Placement={info} total_student_placement={total_student_intern} />
+                <Pie Placement={Intern} total_student_placement={total_student_intern} />
                 :
                 <Pie Placement={Placement} total_student_placement={total_student_placement}/> 
             }
@@ -71,9 +71,7 @@ function Stats({ info }) {
                 <DisplayAll Placement={info} batch={2022} />
                 :
                 <DisplayAll Placement={info} batch={2021}/> 
-            }
-
-            
+            }            
         </>
     )
 }
