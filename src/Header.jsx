@@ -58,7 +58,7 @@ export default function Header({change,hall_of_fame}) {
           onChange={handleChange}
           label="Year"
           inputProps={{
-            name: 'year',
+            name: 'age',
             id: 'outlined-age-native-simple',
           }}
         >
