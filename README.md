@@ -1,7 +1,9 @@
 
-# Cheak out the live projected hosted using Github Pages <B
+# Cheak out the live project
 
 [E-Placement Portal](https://fantasy-08.github.io/placement-P).
+
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://murmuring-mesa-21077.herokuapp.com/)
 
 
 # Cheak out the live updates of MNIT JAIPUR placement session !!!
