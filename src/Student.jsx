@@ -11,7 +11,6 @@ import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
-// import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
@@ -23,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
   media: {
     height: 0,
-    paddingTop: '56.25%', // 16:9
+    paddingTop: '56.25%',
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -52,16 +51,13 @@ export default function Student({name,branch,company,profile,Package,date}) {
     const handleExpandClick = () => {
         setExpanded(!expanded);
     };
-//   const URL = `https://logo.clearbit.com/${company.replace(/ /g, '')}.com?size=800}`;
-    // const URL = "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80";
-    // var URL = 'https://source.unsplash.com/random/';
+
     useEffect(() => {
         async function fetchUrl() {
-            const temp = await fetch("https://source.unsplash.com/1600x900/?coding,developer");
+            const temp = await fetch(`https://source.unsplash.com/1600x900/?coding,${company.replace(/ /g, '')}`);
             setURL(temp.url);
         } fetchUrl()
     }, []);
-
   return (
     <Card className={classes.root}>
       <CardHeader
@@ -149,3 +145,8 @@ export default function Student({name,branch,company,profile,Package,date}) {
     </Card>
   );
 }
+
+
+  // const URL = `https://logo.clearbit.com/${company.replace(/ /g, '')}.com?size=800}`;
+  //   const URL = "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80";
+  //   var URL = 'https://source.unsplash.com/random/';

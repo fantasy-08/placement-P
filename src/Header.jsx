@@ -27,12 +27,12 @@ export default function Header({change,hall_of_fame}) {
   });
   const [state_button, setState_button] = React.useState({
     checkedA: true,
-    checkedB: true,
   });
 
   const handleChange_button = (event) => {
-      setState_button({ ...state, [event.target.name]: event.target.checked });
-      change("Increasing", !state_button.checkedA);
+    setState_button({ ...state, [event.target.name]: event.target.checked });
+    if (event.target.name === "checkedA") change("Increasing", !state_button.checkedA);
+    else change("statsyear",!state_button.checkedB?2:3);
   };
 
     const HandleChange = () => {
@@ -62,14 +62,15 @@ export default function Header({change,hall_of_fame}) {
             id: 'outlined-age-native-simple',
           }}
         >
-            <option aria-label="None" value="" />
+          <option aria-label="None" value="" />
+            <option value={4}>Statistics</option>
             <option value={1}>First Year</option>
             <option value={2}>Second Year</option>
             <option value={3}>Third Year</option>
             <option value={null}>All</option>
         </Select>
           </FormControl>
-          <FormGroup row>
+      <FormGroup row>
         <div className="ml-auto">
             <FormControlLabel 
                 control={<Switch checked={state_button.checkedA} onChange={handleChange_button} name="checkedA" />}
@@ -77,13 +78,14 @@ export default function Header({change,hall_of_fame}) {
             />
         </div>
               
-              <IconButton aria-label="delete" className={classes.margin} size="small" onClick={HandleChange}>
-                  {
-                    hall_of_fame ?
-                    <ArrowDownwardIcon fontSize="inherit" /> :
-                    <AddRoundedIcon fontSize="inherit" />                        
-                  }
+        <IconButton aria-label="delete" className={classes.margin} size="small" onClick={HandleChange}>
+            {
+              hall_of_fame ?
+              <ArrowDownwardIcon fontSize="inherit" /> :
+              <AddRoundedIcon fontSize="inherit" />                        
+            }
         </IconButton>
+
       </FormGroup>
     </div>
   );
