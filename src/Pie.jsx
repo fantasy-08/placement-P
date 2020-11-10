@@ -19,7 +19,7 @@ function Pie({ Placement, total_student_placement })
         <div>
             <h6>Pie Tell It All!</h6>
             <Chart
-            width={'1000px'}
+            width={'100%'}
             height={'500px'}
             chartType="PieChart"
             loader={<div>Loading Chart</div>}
