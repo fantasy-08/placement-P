@@ -2809,6 +2809,7 @@ function App() {
     year: "0",
     Increasing: false,
     HOF: true,
+    old: false,
   });
   const [subtask, setSubtask] = useState(false);
 
@@ -2862,23 +2863,36 @@ function App() {
   };
 
   useEffect(() => {
-    async function fetchData() {
-      const res = await fetch(
+    function fetchData() {
+      fetch(
         "https://cors-anywhere.herokuapp.com/http://placements.mnit.ac.in/api/placements/getAll",
         { method: "POST" }
-      );
-      const data = await res.json();
-      // const data = server_data;
-      setInfo(data.placements);
-      return data;
+      )
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error('Something went wrong');
+          }
+        })
+        .then(data => {
+          setInfo(data.placements);
+        })
+        .catch((error) => {
+          setInfo(server_data.placements);
+          setCondition((prevdata) => {
+            return {...prevdata,old:true}
+          })
+        });
+      return null;
     }
     fetchData();
-  }, []);
+  }, [server_data]);
 
   return (
     <div >
       <h1 style={{textAlign:"center",fontFamily:'Dancing Script'}}>E-Placement Portal</h1> 
-      <Header className="container" change={SetCondition} hall_of_fame={condition.HOF} subtask={subtask}/>
+      <Header className="container" change={SetCondition} hall_of_fame={condition.HOF} subtask={subtask} old={condition.old}/>
       {
         condition.HOF ?
           <Frame info={info}/> :

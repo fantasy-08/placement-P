@@ -9,6 +9,8 @@ import Switch from '@material-ui/core/Switch';
 import IconButton from '@material-ui/core/IconButton';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import AddRoundedIcon from '@material-ui/icons/AddRounded';
+import { MDBContainer, MDBAlert } from 'mdbreact';
+
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
@@ -19,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Header({change,hall_of_fame}) {
+export default function Header({change,hall_of_fame,old}) {
   const classes = useStyles();
   const [state, setState] = React.useState({
     year: '',
@@ -49,7 +51,16 @@ export default function Header({change,hall_of_fame}) {
   };
 
   return (
-      <div className="text-center">
+    <div className="text-center">
+      {
+        old ?
+          <MDBContainer>
+          <MDBAlert color="danger" dismiss>
+            Unable to <strong>connect to server</strong> you may be seeing old records!
+          </MDBAlert>
+        </MDBContainer> :
+          <></>          
+      }
       <FormControl variant="outlined" className={classes.formControl}>
         <InputLabel htmlFor="outlined-age-native-simple">Year</InputLabel>
         <Select
