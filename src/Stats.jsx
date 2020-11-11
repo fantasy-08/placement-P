@@ -32,7 +32,7 @@ function Stats({ info }) {
                 Placement[department].maximum = Math.max(parseInt(Package, 10), parseInt(Placement[department].maximum, 10));
                 total_student_placement += 1;
             }
-            else {
+            else if(item.passout_batch==="2022"){
                 const Package = item.intern_stipend;
                 const department = item.students[0].department;
                 global_Intern.total += 1;
@@ -68,9 +68,9 @@ function Stats({ info }) {
             }
             {
                 state.gilad ?
-                <DisplayAll Placement={info} batch={2022} />
+                <DisplayAll Placement={info} batch={"2022"} />
                 :
-                <DisplayAll Placement={info} batch={2021}/> 
+                <DisplayAll Placement={info} batch={"2021"}/> 
             }            
         </>
     )

@@ -2876,7 +2876,7 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div >
       <h1 style={{textAlign:"center",fontFamily:'Dancing Script'}}>E-Placement Portal</h1> 
       <Header className="container" change={SetCondition} hall_of_fame={condition.HOF} subtask={subtask}/>
       {
@@ -2887,6 +2887,7 @@ function App() {
       <br />
       <hr />
       <br />
+      <div className="container">
       <div className="row">
       {
         (function ()
@@ -2908,7 +2909,7 @@ function App() {
               const department = item.students.department;
               const date = item.recruitment_date;
               return(
-              <div className="col-sm-3">
+              <div className="col-sm-4">
                 <Student name={name}
                         branch={branch}
                         company={company}
@@ -2941,7 +2942,7 @@ function App() {
                 const department = item.students.department;
                 const date = item.recruitment_date;
                 return (
-                  <div className="col-sm-3">
+                  <div className="col-sm-4">
                     <Student name={name}
                             branch={branch}
                             company={company}
@@ -2967,7 +2968,7 @@ function App() {
                 const department = item.students.department;
                 const date = item.recruitment_date;
                 return (
-                  <div className="col-sm-3">
+                  <div className="col-sm-4">
                     <Student name={name}
                             branch={branch}
                             company={company}
@@ -2982,7 +2983,8 @@ function App() {
             })
           }
         })()
-      }
+        }
+      </div>
       </div>
     </div>
   )
