@@ -9,7 +9,7 @@ import Switch from '@material-ui/core/Switch';
 import IconButton from '@material-ui/core/IconButton';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import AddRoundedIcon from '@material-ui/icons/AddRounded';
-import { MDBContainer, MDBAlert } from 'mdbreact';
+import AlertPage from './AlertPage';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -53,13 +53,7 @@ export default function Header({change,hall_of_fame,old}) {
   return (
     <div className="text-center">
       {
-        old ?
-          <MDBContainer>
-          <MDBAlert color="danger" dismiss>
-            Unable to <strong>connect to server</strong> you may be seeing old records!
-          </MDBAlert>
-        </MDBContainer> :
-          <></>          
+        old?<AlertPage/>:<></>
       }
       <FormControl variant="outlined" className={classes.formControl}>
         <InputLabel htmlFor="outlined-age-native-simple">Year</InputLabel>
@@ -78,7 +72,8 @@ export default function Header({change,hall_of_fame,old}) {
             <option value={1}>First Year</option>
             <option value={2}>Second Year</option>
             <option value={3}>Third Year</option>
-            <option value={null}>All</option>
+            <option value={0}>All</option>
+            <option value={5}>Companies</option>
         </Select>
           </FormControl>
       <FormGroup row>

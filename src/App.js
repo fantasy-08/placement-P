@@ -3,6 +3,8 @@ import Header from './Header'
 import Student from './Student';
 import Frame from './Frame';
 import Stats from './Stats';
+import Company from './Company';
+
 const server_data = {
   success: true,
   placements: [
@@ -2995,6 +2997,13 @@ function App() {
               }
               return;
             })
+          }
+          else if (condition.year === "5") {
+            return (
+              <div className="container">
+                <Company info={info}/>
+              </div>  
+            )
           }
         })()
         }
