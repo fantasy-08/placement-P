@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Student({name,branch,company,profile,Package,date}) {
+export default function Student({name,branch,company,profile,Package,date,isSecond}) {
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
     const [URL, setURL] = React.useState();
@@ -81,7 +81,7 @@ export default function Student({name,branch,company,profile,Package,date}) {
           />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          {Package} Lacs
+          {Package} {isSecond?"Thousand/month":"Lac/annum"}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>

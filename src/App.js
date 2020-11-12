@@ -2924,15 +2924,17 @@ function App() {
               }
               const department = item.students.department;
               const date = item.recruitment_date;
+              var isSecond = item.passout_batch==="2021"?false:true
               return(
               <div className="col-sm-4">
-                <Student name={name}
-                        branch={branch}
-                        company={company}
-                        profile={profile}
-                        Package={Package}
-                        department={department} 
-                        date={date}
+                  <Student name={name}
+                    branch={branch}
+                    company={company}
+                    profile={profile}
+                    Package={Package}
+                    department={department}
+                    date={date}
+                    isSecond={isSecond}
                   />
                 </div>
               )
@@ -2965,7 +2967,9 @@ function App() {
                             profile={profile}
                             Package={Package}
                             department={department} 
-                            date={date}/>
+                            isSecond={true}
+                            date={date}
+                    />
                     </div>
                   )
               }
@@ -2991,6 +2995,7 @@ function App() {
                             profile={profile}
                             Package={Package}
                             department={department} 
+                            isSecond={false}
                             date={date}/>
                     </div>
                   )
