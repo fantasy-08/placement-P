@@ -15,7 +15,8 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { SpriteAnimator } from 'react-sprite-animator';
-import heart from './heart.svg'  
+import heart from './heart.svg'
+import './App.css'
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
@@ -54,7 +55,7 @@ export default function Student({name,branch,company,profile,Package,date,isSeco
 
     useEffect(() => {
         async function fetchUrl() {
-            const temp = await fetch(`https://source.unsplash.com/1600x900/?coding,${company.replace(/ /g, '')}`);
+            const temp = await fetch(`https://logo.clearbit.com/${company.replace(/ /g, '')}.com`);
             setURL(temp.url);
         } fetchUrl()
     }, []);

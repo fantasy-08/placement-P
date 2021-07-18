@@ -72,7 +72,7 @@ function App() {
   useEffect(() => {
     function fetchData() {
       fetch(
-        "https://cors-anywhere.herokuapp.com/http://placements.mnit.ac.in/api/placements/getAll",
+        "http://placements.mnit.ac.in/api/placements/getAll",
         { method: "POST" }
       )
         .then((response) => {
