@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -11,7 +11,6 @@ import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
-import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { SpriteAnimator } from 'react-sprite-animator';
@@ -40,25 +39,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Student({name,branch,company,profile,Package,date,isSecond}) {
-    const classes = useStyles();
-    const [expanded, setExpanded] = React.useState(false);
-    const [URL, setURL] = React.useState();
-    const [isLiked, setIsLiked] = useState(false)
+export default function Student({ name, branch, company, profile, Package, date, isInternship, URL }) {
+  const classes = useStyles();
+  const [expanded, setExpanded] = React.useState(false);
+  const [isLiked, setIsLiked] = useState(false)
 
-    const onClick = () => {
-      setIsLiked(!isLiked)
-    }
-    const handleExpandClick = () => {
-        setExpanded(!expanded);
-    };
+  const onClick = () => {
+    setIsLiked(!isLiked)
+  }
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
 
-    useEffect(() => {
-        async function fetchUrl() {
-            const temp = await fetch(`https://logo.clearbit.com/${company.replace(/ /g, '')}.com`);
-            setURL(temp.url);
-        } fetchUrl()
-    }, []);
   return (
     <Card className={classes.root}>
       <CardHeader
@@ -75,40 +67,31 @@ export default function Student({name,branch,company,profile,Package,date,isSeco
         title={name}
         subheader={date}
       />
-          <CardMedia
-              className={classes.media}
-              image={URL}
-              title={company}
-          />
+      <CardMedia
+        className={classes.media}
+        image={URL}
+        title={company}
+      />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          {Package} {isSecond?"Thousand/month":"Lac/annum"}
+          {Package} {isInternship ? "Thousand/month" : "Lachs/annum"}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites" >
-        <div onClick={onClick}>
-      <SpriteAnimator
-        width={36}
-        height={36}
-        sprite={heart}
-        shouldAnimate={isLiked}
-        fps={60}
-        startFrame={0}
-        stopLastFrame={true}
-        reset={!isLiked}
-      />
-    </div>
+          <div onClick={onClick}>
+            <SpriteAnimator
+              width={36}
+              height={36}
+              sprite={heart}
+              shouldAnimate={isLiked}
+              fps={60}
+              startFrame={0}
+              stopLastFrame={true}
+              reset={!isLiked}
+            />
+          </div>
         </IconButton>
-              <div class="fb-share-button"
-                  data-href="https://developers.facebook.com/docs/plugins/"
-                  data-layout="button_count" data-size="large">
-                  <a target="_blank"
-                      href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
-                      class="fb-xfbml-parse-ignore">
-                      <ShareIcon />
-                  </a>
-              </div>
         <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,
@@ -124,30 +107,24 @@ export default function Student({name,branch,company,profile,Package,date,isSeco
         <CardContent>
           <Typography paragraph>Details:</Typography>
           <Typography paragraph>
-                <div>
-                    <h6>Student Name</h6>{name}    
-                </div>
-                <div>
-                    <h6>Student Branch</h6>{branch}    
-                </div>
-                <div>
-                    <h6>Company</h6>{company}    
-                </div>
-                <div>
-                    <h6>Package offered</h6>{Package}    
-                </div>
-                <div>
-                    <h6>Job Profile</h6>{profile}    
-                </div>
+            <div>
+              <h6>Student Name</h6>{name}
+            </div>
+            <div>
+              <h6>Student Branch</h6>{branch}
+            </div>
+            <div>
+              <h6>Company</h6>{company}
+            </div>
+            <div>
+              <h6>{isInternship ? "Stipend" : "Package"} offered</h6>{Package}
+            </div>
+            <div>
+              <h6>Job Profile</h6>{profile}
+            </div>
           </Typography>
-          
         </CardContent>
       </Collapse>
     </Card>
   );
 }
-
-
-  // const URL = `https://logo.clearbit.com/${company.replace(/ /g, '')}.com?size=800}`;
-  //   const URL = "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80";
-  //   var URL = 'https://source.unsplash.com/random/';

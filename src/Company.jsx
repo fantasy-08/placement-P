@@ -18,8 +18,13 @@ function Company({info}) {
     var Branch =[],IBranch=[]
     var global_Placement = 0, global_Intern = 0;
     function init() {
+        var year = "0000"
         info.forEach((item) => {
-            if(item.passout_batch==="2021"){
+            if (item.passout_batch > year)
+                year = item.passout_batch;
+        })
+        info.forEach((item) => {
+            if(item.passout_batch===year && item.recruitment === "Placement"){
                 const Package = item.package;
                 const department = item.students[0].department;
                 const company = item.company_name;
@@ -33,7 +38,7 @@ function Company({info}) {
                 Branch[department].total += 1;
                 Branch[department].max_package = Math.max(Branch[department].max_package, parseFloat(Package));
             }
-            else if(item.passout_batch==="2022"){
+            else if(item.passout_batch===year && item.recruitment !== "Placement"){
                 const Package = item.intern_stipend;
                 const department = item.students[0].department;
                 const company = item.company_name;
@@ -52,6 +57,7 @@ function Company({info}) {
     init();
     return (
         <div>
+            <h6>Total companies visited { !state.checkedA ? global_Placement : global_Intern }</h6>
             <FormGroup row>
                 <FormControlLabel
                     control={<Switch checked={state.checkedA} onChange={handleChange} name="checkedA" />}
