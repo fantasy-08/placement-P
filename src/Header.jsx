@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import FormGroup from '@material-ui/core/FormGroup';
@@ -21,11 +20,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Header({change,hall_of_fame,old}) {
+export default function Header({ change, hall_of_fame, old, tabs }) {
   const classes = useStyles();
   const [state, setState] = React.useState({
     year: '',
-    name: 'hai',
+    name: '',
   });
   const [state_button, setState_button] = React.useState({
     checkedA: true,
@@ -34,12 +33,12 @@ export default function Header({change,hall_of_fame,old}) {
   const handleChange_button = (event) => {
     setState_button({ ...state, [event.target.name]: event.target.checked });
     if (event.target.name === "checkedA") change("Increasing", !state_button.checkedA);
-    else change("statsyear",!state_button.checkedB?2:3);
+    else change("statsyear", !state_button.checkedB ? 2 : 3);
   };
 
-    const HandleChange = () => {
-        change("HOF",false);
-    }
+  const HandleChange = () => {
+    change("HOF", false);
+  }
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -47,49 +46,45 @@ export default function Header({change,hall_of_fame,old}) {
       ...state,
       [name]: event.target.value,
     });
-    change(name,event.target.value);
+    change('type', event.target.value);
   };
 
   return (
     <div className="text-center">
       {
-        old?<AlertPage/>:<></>
+        old ? <AlertPage /> : <></>
       }
       <FormControl variant="outlined" className={classes.formControl}>
-        <InputLabel htmlFor="outlined-age-native-simple">Year</InputLabel>
         <Select
           native
-          value={state.age}
+          value={state.name}
           onChange={handleChange}
           label="Year"
           inputProps={{
-            name: 'year',
-            id: 'outline  d-age-native-simple',
+            name: 'name'
           }}
         >
-          <option aria-label="None" value="" />
-            <option value={4}>Statistics</option>
-            <option value={1}>First Year</option>
-            <option value={2}>Second Year</option>
-            <option value={3}>Third Year</option>
-            <option value={0}>All</option>
-            <option value={5}>Companies</option>
+          {
+            tabs.map((tab) => {
+              return <option value={tab}>{tab}</option>
+            })
+          }
         </Select>
-          </FormControl>
+      </FormControl>
       <FormGroup row>
         <div className="ml-auto">
-            <FormControlLabel 
-                control={<Switch checked={state_button.checkedA} onChange={handleChange_button} name="checkedA" />}
-                label="Sort Increasingly"
-            />
+          <FormControlLabel
+            control={<Switch checked={state_button.checkedA} onChange={handleChange_button} name="checkedA" />}
+            label="Sort Increasingly"
+          />
         </div>
-              
+
         <IconButton aria-label="delete" className={classes.margin} size="small" onClick={HandleChange}>
-            {
-              hall_of_fame ?
+          {
+            hall_of_fame ?
               <ArrowDownwardIcon fontSize="inherit" /> :
-              <AddRoundedIcon fontSize="inherit" />                        
-            }
+              <AddRoundedIcon fontSize="inherit" />
+          }
         </IconButton>
 
       </FormGroup>
