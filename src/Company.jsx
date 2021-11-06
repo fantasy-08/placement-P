@@ -57,7 +57,7 @@ function Company({info}) {
     init();
     return (
         <div>
-            <h6>Total companies visited { !state.checkedA ? global_Placement : global_Intern }</h6>
+            <h6>Total companies visited {!state.checkedA ? Object.keys(Placemet_company).length : Object.keys(Intern_company).length} <b>with</b> <i>total offers given { !state.checkedA ? global_Placement : global_Intern }</i></h6>
             <FormGroup row>
                 <FormControlLabel
                     control={<Switch checked={state.checkedA} onChange={handleChange} name="checkedA" />}
