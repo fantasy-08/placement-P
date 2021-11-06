@@ -19,7 +19,6 @@ function Frame({info}) {
                         <div class="carousel-item active">
                             <img
                                 src={URL}
-                                alt="new"
                             />
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>{info[0].students[0].student_name}</h5>

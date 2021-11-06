@@ -55,7 +55,7 @@ function Stats({ info }) {
     init();
     return (
         <>
-            <h6>Total offers received { !state.gilad ? total_student_placement : total_student_intern }</h6>
+            <h6 style={{textAlign: 'center'}}>Total students with <b>{!state.gilad ? 'placement' : 'internship' }</b> offer : { !state.gilad ? total_student_placement : total_student_intern }</h6>
             <FormControlLabel
                 control={<Switch checked={state.gilad} onChange={handleChange} name="gilad" />}
                 label="Second Year"
