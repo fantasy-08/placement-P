@@ -15,7 +15,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { SpriteAnimator } from 'react-sprite-animator';
 import heart from './heart.svg'
-import './App.css'
+
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
@@ -23,7 +23,8 @@ const useStyles = makeStyles((theme) => ({
   media: {
     height: 0,
     paddingTop: '56.25%',
-    objectFit: 'cover'
+    objectFit: 'cover',
+    backgroundSize: '50%'
   },
   expand: {
     transform: 'rotate(0deg)',
