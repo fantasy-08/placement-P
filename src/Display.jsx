@@ -1,16 +1,17 @@
 import React from 'react'
 
-function Display({ Placement }) {
+function Display({ Placement, isInternship }) {
+    var unit = isInternship ? 'thousand/month' : 'lacs/annum'
     return (
         <div>
         <table class="table  table-striped">
             <thead class="thead-dark">
                 <tr>
-                <th scope="col">#</th>
-                <th scope="col">Branch</th>
-                <th scope="col">Total Placed</th>
-                <th scope="col">Average Package</th>
-                <th scope="col">Maximum Package</th>        
+                    <th scope="col">#</th>
+                    <th scope="col">Branch</th>
+                    <th scope="col">Total Placed</th>
+                    <th scope="col">Average Package { unit }</th>
+                    <th scope="col">Maximum Package { unit }</th>        
                 </tr>
             </thead>
             <tbody>

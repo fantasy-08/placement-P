@@ -12,7 +12,8 @@ function Company_Stat({ Placemet_company, global_Placement }) {
         "MECHANICAL ENGINEERING",
         "CHEMICAL ENGINEERING",
         "METALLURGICAL AND MATERIALS ENGINEERING",
-        "CIVIL ENGINEERING"
+        "CIVIL ENGINEERING",
+        "ELECTRICAL ENGINEERING"
     ]
     var data = {
         columns: [
@@ -43,6 +44,12 @@ function Company_Stat({ Placemet_company, global_Placement }) {
                 {
                     label: 'ELECTRONICS AND COMMUNICATION ENGINEERING',
                     field: 'f',
+                    sort: 'asc',
+                    width: 100 
+                },
+                {
+                    label: 'ELECTRICAL ENGINEERING',
+                    field: 'k',
                     sort: 'asc',
                     width: 100 
                 },
@@ -87,8 +94,9 @@ function Company_Stat({ Placemet_company, global_Placement }) {
                 else if (department === branches[1]) temp.f = placed;
                 else if (department === branches[2]) temp.g = placed;
                 else if (department === branches[3]) temp.h = placed;
-                else if (department === branches[5]) temp.i = placed;
-                else temp.j = placed;
+                else if (department === branches[4]) temp.i = placed;
+                else if (department === branches[5]) temp.j = placed;
+                else temp.k = placed;
             })
             data.rows.push(temp);
         })

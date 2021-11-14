@@ -62,9 +62,9 @@ function Stats({ info }) {
             />
             {
                 state.gilad ?
-                    <Display Placement={Intern} />
+                    <Display Placement={Intern} isInternship = {true} />
                     :
-                    <Display Placement={Placement} />
+                    <Display Placement={Placement} isInternship = {false} />
             }
             {
                 state.gilad ?

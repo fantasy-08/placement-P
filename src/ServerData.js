@@ -2,6 +2,44 @@ const server_data = {
     "success": true,
     "placements": [
         {
+            "_id": "618a47a7d686385e6ee1b8bc",
+            "intern_stipend": "90000",
+            "package": "0",
+            "passout_batch": "2022",
+            "company_name": "Apple",
+            "job_profile": "Sde",
+            "recruitment": "Internship",
+            "recruitment_type": "On-Campus",
+            "recruitment_date": "2021-10-28T18:30:00.000Z",
+            "intern_duration": "6",
+            "students": [
+                {
+                    "student_name": "SONAL AGRAWAL",
+                    "department": "COMPUTER SCIENCE AND ENGINEERING",
+                    "degree": "B.Tech"
+                }
+            ]
+        },
+        {
+            "_id": "618a47a7d686385e6ee1b8bd",
+            "intern_stipend": "90000",
+            "package": "0",
+            "passout_batch": "2022",
+            "company_name": "Apple",
+            "job_profile": "Sde",
+            "recruitment": "Internship",
+            "recruitment_type": "On-Campus",
+            "recruitment_date": "2021-10-28T18:30:00.000Z",
+            "intern_duration": "6",
+            "students": [
+                {
+                    "student_name": "SOMYA GUPTA",
+                    "department": "COMPUTER SCIENCE AND ENGINEERING",
+                    "degree": "B.Tech"
+                }
+            ]
+        },
+        {
             "_id": "61580039d686385e6ee1b852",
             "intern_stipend": "0",
             "package": "14.75",
