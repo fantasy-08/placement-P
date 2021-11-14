@@ -62,9 +62,9 @@ function Stats({ info }) {
             />
             {
                 state.gilad ?
-                    <Display Placement={Intern} isInternship = {true} />
+                    <Display Placement={Intern} unit = {'(' + 'thousand/month' + ')'} />
                     :
-                    <Display Placement={Placement} isInternship = {false} />
+                    <Display Placement={Placement} unit = {'(' + 'lacs/annum' + ')'} />
             }
             {
                 state.gilad ?
