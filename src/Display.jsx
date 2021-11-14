@@ -1,7 +1,7 @@
 import React from 'react'
 
 function Display({ Placement, isInternship }) {
-    var unit = isInternship ? 'thousand/month' : 'lacs/annum'
+    var unit = '(' +  isInternship ? 'thousand/month' : 'lacs/annum' + ')'
     return (
         <div>
         <table class="table  table-striped">
