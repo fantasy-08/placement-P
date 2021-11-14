@@ -40,7 +40,7 @@ export default function DisplayAll({ Placement, batch }) {
             const branch = item.students[0].department;
             const company = item.company_name;
             var Package = batch === "2022" ? item.intern_stipend : item.package;
-            if (Package === undefined || isNaN(Package))
+            if (Package === undefined || isNaN(Package) || Package == 0)
             {
                 return null;
             }
