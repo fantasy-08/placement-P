@@ -59,7 +59,7 @@ export default function DisplayAll({ Placement, batch }) {
                     branch: branch,
                     package: Package,
                     company: company,
-                    batch: 
+                    batch: batch
                 }
                 temp.push(T);
             }
