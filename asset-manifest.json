@@ -1,30 +1,30 @@
 {
   "files": {
     "main.css": "/placement-P/static/css/main.a73dd17b.chunk.css",
-    "main.js": "/placement-P/static/js/main.73faf4ef.chunk.js",
-    "main.js.map": "/placement-P/static/js/main.73faf4ef.chunk.js.map",
-    "runtime-main.js": "/placement-P/static/js/runtime-main.8664ba2f.js",
-    "runtime-main.js.map": "/placement-P/static/js/runtime-main.8664ba2f.js.map",
-    "static/css/2.37802ad8.chunk.css": "/placement-P/static/css/2.37802ad8.chunk.css",
-    "static/js/2.bcbd1385.chunk.js": "/placement-P/static/js/2.bcbd1385.chunk.js",
-    "static/js/2.bcbd1385.chunk.js.map": "/placement-P/static/js/2.bcbd1385.chunk.js.map",
-    "static/js/3.5a483ef6.chunk.js": "/placement-P/static/js/3.5a483ef6.chunk.js",
-    "static/js/3.5a483ef6.chunk.js.map": "/placement-P/static/js/3.5a483ef6.chunk.js.map",
+    "main.js": "/placement-P/static/js/main.aeb5b7e4.chunk.js",
+    "main.js.map": "/placement-P/static/js/main.aeb5b7e4.chunk.js.map",
+    "runtime-main.js": "/placement-P/static/js/runtime-main.6fadd41c.js",
+    "runtime-main.js.map": "/placement-P/static/js/runtime-main.6fadd41c.js.map",
+    "static/css/2.943491bf.chunk.css": "/placement-P/static/css/2.943491bf.chunk.css",
+    "static/js/2.f351111c.chunk.js": "/placement-P/static/js/2.f351111c.chunk.js",
+    "static/js/2.f351111c.chunk.js.map": "/placement-P/static/js/2.f351111c.chunk.js.map",
+    "static/js/3.40bc2b86.chunk.js": "/placement-P/static/js/3.40bc2b86.chunk.js",
+    "static/js/3.40bc2b86.chunk.js.map": "/placement-P/static/js/3.40bc2b86.chunk.js.map",
     "index.html": "/placement-P/index.html",
-    "precache-manifest.cdfcaa202723a82f5434523f71c9715a.js": "/placement-P/precache-manifest.cdfcaa202723a82f5434523f71c9715a.js",
+    "precache-manifest.a99c8c9f20e1b52de65e97d56ff0abd7.js": "/placement-P/precache-manifest.a99c8c9f20e1b52de65e97d56ff0abd7.js",
     "service-worker.js": "/placement-P/service-worker.js",
-    "static/css/2.37802ad8.chunk.css.map": "/placement-P/static/css/2.37802ad8.chunk.css.map",
+    "static/css/2.943491bf.chunk.css.map": "/placement-P/static/css/2.943491bf.chunk.css.map",
     "static/css/main.a73dd17b.chunk.css.map": "/placement-P/static/css/main.a73dd17b.chunk.css.map",
-    "static/js/2.bcbd1385.chunk.js.LICENSE.txt": "/placement-P/static/js/2.bcbd1385.chunk.js.LICENSE.txt",
+    "static/js/2.f351111c.chunk.js.LICENSE.txt": "/placement-P/static/js/2.f351111c.chunk.js.LICENSE.txt",
     "static/media/mdb.css": "/placement-P/static/media/arrow_right.d9ccc77c.svg",
     "static/media/all.min.css": "/placement-P/static/media/fa-solid-900.d824df7e.woff2",
     "static/media/heart.svg": "/placement-P/static/media/heart.dfd039e6.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.8664ba2f.js",
-    "static/css/2.37802ad8.chunk.css",
-    "static/js/2.bcbd1385.chunk.js",
+    "static/js/runtime-main.6fadd41c.js",
+    "static/css/2.943491bf.chunk.css",
+    "static/js/2.f351111c.chunk.js",
     "static/css/main.a73dd17b.chunk.css",
-    "static/js/main.73faf4ef.chunk.js"
+    "static/js/main.aeb5b7e4.chunk.js"
   ]
 }
