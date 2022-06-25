@@ -1,35 +1,35 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d300d246bb33dce088ec2aaaff296739",
+    "revision": "9006ef9e87de9185f02246e14e13534a",
     "url": "/placement-P/index.html"
   },
   {
-    "revision": "10b0bb856ff4c20861f1",
-    "url": "/placement-P/static/css/2.943491bf.chunk.css"
+    "revision": "94e802fb492a53b3f706",
+    "url": "/placement-P/static/css/2.37802ad8.chunk.css"
   },
   {
-    "revision": "d78b76e6f84d89b6ff3e",
-    "url": "/placement-P/static/css/main.1fc973a9.chunk.css"
+    "revision": "6a9c023b3dc3e787e677",
+    "url": "/placement-P/static/css/main.a73dd17b.chunk.css"
   },
   {
-    "revision": "10b0bb856ff4c20861f1",
-    "url": "/placement-P/static/js/2.f351111c.chunk.js"
+    "revision": "94e802fb492a53b3f706",
+    "url": "/placement-P/static/js/2.bcbd1385.chunk.js"
   },
   {
     "revision": "6240a96e598362eb23ddc4420154ddfd",
-    "url": "/placement-P/static/js/2.f351111c.chunk.js.LICENSE.txt"
+    "url": "/placement-P/static/js/2.bcbd1385.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c4701c06ba8ba0656a93",
-    "url": "/placement-P/static/js/3.40bc2b86.chunk.js"
+    "revision": "fb7fdccf0fdd14f83df2",
+    "url": "/placement-P/static/js/3.5a483ef6.chunk.js"
   },
   {
-    "revision": "d78b76e6f84d89b6ff3e",
-    "url": "/placement-P/static/js/main.23c7e1bd.chunk.js"
+    "revision": "6a9c023b3dc3e787e677",
+    "url": "/placement-P/static/js/main.73faf4ef.chunk.js"
   },
   {
-    "revision": "47c4c41e9c8eb5db8bf3",
-    "url": "/placement-P/static/js/runtime-main.6fadd41c.js"
+    "revision": "e41095002d9dbcf271dd",
+    "url": "/placement-P/static/js/runtime-main.8664ba2f.js"
   },
   {
     "revision": "270f72df47e036d9cfa11f91f0a94a60",
@@ -100,7 +100,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/placement-P/static/media/fa-solid-900.d824df7e.woff2"
   },
   {
-    "revision": "cec65ae4891a04d4af119faec51d1253",
-    "url": "/placement-P/static/media/heart.cec65ae4.svg"
+    "revision": "dfd039e6c2f602f80e0fd2d57f172e89",
+    "url": "/placement-P/static/media/heart.dfd039e6.svg"
   }
 ]);
