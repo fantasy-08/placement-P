@@ -76,7 +76,7 @@ function App() {
 
   useEffect(() => {
     function fetchData() {
-      fetch("http://placements.mnit.ac.in/api/placements/getAll", {
+      fetch("https://placements.mnit.ac.in/api/placements/getAll", {
         method: "POST",
       })
         .then((response) => {
